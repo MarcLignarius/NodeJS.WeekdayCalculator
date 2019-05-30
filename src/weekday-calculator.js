@@ -15,6 +15,7 @@ export default class Date {
       } else {
         countDays += 365;
       }
+      // console.log("years", countDays);
     }
     for (let m = 0; m < this.month - 1; m++) {
       if ((year % 4 === 0) && (year % 100 !== 0) || (year % 400 === 0)) {
@@ -23,10 +24,12 @@ export default class Date {
       else {
         countDays += notLeapMonths[m];
       }
+      // console.log("months", countDays);
     }
     for (let d = 0; d < this.day; d++) {
       countDays += 1;
     }
+    // console.log("days", countDays);
     return countDays;
   }
 
@@ -35,17 +38,18 @@ export default class Date {
   }
 
   getWeekday(countDays) {
+    // console.log("getWeekday", countDays)
     if (countDays % 7 === 1) {
       return "Monday";
-    } else if (countDays % 7 === 2) {
+    } else if (countDays % 7 == 2) {
       return "Tuesday";
-    } else if (countDays % 7 === 3) {
+    } else if (countDays % 7 == 3) {
       return "Wednesday";
-    } else if (countDays % 7 === 4) {
+    } else if (countDays % 7 == 4) {
       return "Thursday";
-    } else if (countDays % 7 === 5) {
+    } else if (countDays % 7 == 5) {
       return "Friday";
-    } else if (countDays % 7 === 6) {
+    } else if (countDays % 7 == 6) {
       return "Saturday";
     } else {
       return "Sunday";
