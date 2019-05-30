@@ -7,16 +7,14 @@ $(document).ready(function () {
   $("#weekdayForm").submit(function(event){
     event.preventDefault();
     let countDays = 0;
-    let monthInput = $("#monthInput").val();
-    let dayInput = $("#dayInput").val();
-    let yearInput = $("#yearInput").val();
-    const dayNumber = parseInt(dayInput);
-    const monthNumber = parseInt(monthInput);
-    const yearNumber = parseInt(yearInput);
-    let dateObject = new Date(yearNumber, monthNumber, dayNumber, countDays);
-    let updatedDays = dateObject.leapYearAddDays(yearNumber, countDays);
+    let monthInput = parseInt($("#monthInput").val());
+    let dayInput = parseInt($("#dayInput").val());
+    let yearInput = parseInt($("#yearInput").val());
+
+    let dateObject = new Date(yearInput, monthInput, dayInput, countDays);
+    let updatedDays = dateObject.leapYearAddDays(yearInput, countDays);
     let finalDay = dateObject.getWeekday(updatedDays);
     $("#result").text(finalDay);
-    dateObject.resetDays(yearNumber, monthNumber, dayNumber);
+    dateObject.resetDays(yearInput, monthInput, dayInput);
   });
 });
