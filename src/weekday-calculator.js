@@ -1,4 +1,4 @@
-export default class Date {
+export class DateApp {
   constructor(year, month, day, countDays) {
     this.year = year;
     this.month = month;
@@ -15,7 +15,7 @@ export default class Date {
       } else {
         countDays += 365;
       }
-      // console.log("years", countDays);
+      console.log("years", countDays);
     }
     for (let m = 0; m < this.month - 1; m++) {
       if ((year % 4 === 0) && (year % 100 !== 0) || (year % 400 === 0)) {
@@ -24,12 +24,12 @@ export default class Date {
       else {
         countDays += notLeapMonths[m];
       }
-      // console.log("months", countDays);
+      console.log("months", countDays);
     }
     for (let d = 0; d < this.day; d++) {
       countDays += 1;
     }
-    // console.log("days", countDays);
+    console.log("days", countDays);
     return countDays;
   }
 
@@ -56,3 +56,6 @@ export default class Date {
     }
   }
 }
+
+let dummyDate = new DateApp(1, 1, 1, 1);
+dummyDate.getWeekday();
