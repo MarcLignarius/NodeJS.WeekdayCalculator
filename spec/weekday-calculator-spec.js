@@ -1,12 +1,9 @@
-import { DateApp } from './../src/weekday-calculator.js';
-// import { leapYearAddDays } from './../src/weekday-calculator.js';
-// import { resetDays } from './../src/weekday-calculator.js';
-// import { getWeekday } from './../src/weekday-calculator.js';
+import { DateCalculator } from './../src/weekday-calculator.js';
 
-describe('DateApp', function() {
+describe('DateCalculator', function() {
 
   it('should return Thursday', function() {
-    let userDate = new DateApp();
+    let userDate = new DateCalculator(2019, 5, 30);
     expect(userDate.getWeekday(737209)).toEqual("Thursday");
 
   });

@@ -1,4 +1,4 @@
-export class DateApp {
+export class DateCalculator {
   constructor(year, month, day, countDays) {
     this.year = year;
     this.month = month;
@@ -56,6 +56,3 @@ export class DateApp {
     }
   }
 }
-
-let dummyDate = new DateApp(1, 1, 1, 1);
-dummyDate.getWeekday();

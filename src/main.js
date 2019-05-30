@@ -1,4 +1,4 @@
-import DateApp from './weekday-calculator.js';
+import DateCalculator from './weekday-calculator.js';
 import $ from 'jquery';
 import 'bootstrap';
 import './styles.css';
@@ -10,8 +10,7 @@ $(document).ready(function () {
     let monthInput = parseInt($("#monthInput").val());
     let dayInput = parseInt($("#dayInput").val());
     let yearInput = parseInt($("#yearInput").val());
-
-    let dateObject = new DateApp(yearInput, monthInput, dayInput, countDays);
+    let dateObject = new DateCalculator(yearInput, monthInput, dayInput, countDays);
     let updatedDays = dateObject.leapYearAddDays(yearInput, countDays);
     let finalDay = dateObject.getWeekday(updatedDays);
     $("#result").text(finalDay);
